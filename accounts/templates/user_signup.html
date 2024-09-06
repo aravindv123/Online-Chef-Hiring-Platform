@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Sign Up</title>
+    <style>
+        /* Similar styling as before for consistency */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Sign Up</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>
+                <input type="text" name="username" placeholder="Username" required>
+            </p>
+            <p>
+                <input type="email" name="email" placeholder="Email" required>
+            </p>
+            <p>
+                <input type="password" name="password" placeholder="Password" required>
+            </p>
+            <p>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            </p>
+            <p>
+                <input type="text" name="full_name" placeholder="Full Name" required>
+            </p>
+            <p>
+                <input type="tel" name="phone_number" placeholder="Phone Number" required>
+            </p>
+            <p>
+                <textarea name="address" placeholder="Address" required></textarea>
+            </p>
+            <p>
+                <label for="profile_image">Profile Image:</label>
+                <input type="file" name="profile_image" id="profile_image">
+            </p>
+            <p>
+                <label for="user_type">User Type:</label>
+                <select name="user_type" id="user_type" required>
+                    <option value="chef">Chef</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </p>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+    </div>
+</body>
+</html>

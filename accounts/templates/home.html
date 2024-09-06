@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #3498db;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #f0f2f5;
+        }
+
+        .link-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Online Chef Hiring Platform</h1>
+    <p>This is the home page.</p>
+    <div class="link-container">
+        <a href="{% url 'chef_signup' %}">Sign Up as Chef</a>
+        <a href="{% url 'user_signup' %}">Sign Up as User</a>
+    </div>
+    <div class="link-container">
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+</body>
+</html>
